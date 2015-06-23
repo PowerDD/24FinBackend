@@ -1,0 +1,117 @@
+extends layout
+
+block content
+	input#msg-paid(type="hidden", value="#{__('paid')}")
+	input#msg-unpaid(type="hidden", value="#{__('unpaid')}")
+	input#msg-pack(type="hidden", value="#{__('pack')}")
+	input#msg-unpack(type="hidden", value="#{__('unpack')}")
+	input#msg-total(type="hidden", value="#{__('total')}")
+
+	#dv-loading.callout.callout-info.text-center
+		img.loading.top-2(src="/images/icons/loading.gif", alt="loading") 
+		span.loading.text-muted &nbsp;#{__('loadingData')}
+
+	#dv-no_data.callout.callout-danger.text-center.hidden
+		span.loading.text-muted &nbsp;#{__('noData')}
+
+	.row
+		.col-md-3
+			#dv-category.box.box-primary.wait.hidden
+				.box-header
+					h3.pull-left.box-title #{__('income')}
+					h3.pull-right.box-title.text-red
+						span.sp-Income 0
+						small  &#3647;
+				.line
+				.box-body
+					select#select-type.form-control.margin-bottom-5.margin-top-5
+						option(data-type="all", value="") ทั้งหมด
+						optgroup#og-headSale(label="#{__('role-headSale')}")
+						optgroup#og-sale(label="#{__('role-sale')}")
+						optgroup#og-dealer(label="#{__('role-dealer')}")
+					ul#ul-month.nav.nav-pills.nav-stacked
+						li.active(data-month="0")
+							a(href="javascript:void(0)") #{__('current month')}
+						li(data-month="1")
+							a(href="javascript:void(0)") #{__('last 1 month')}
+						li(data-month="2")
+							a(href="javascript:void(0)") #{__('last 2 months')}
+						li(data-month="3")
+							a(href="javascript:void(0)") #{__('last 3 months')}
+
+		.col-md-9
+			.table-responsive.wait.hidden
+				table#tb-result.table.table-striped.table-condensed.table-hover.wait.hidden
+					thead
+						tr.bg-white.font-sm
+							th.orderNo(width="90", nowrap="nowrap") #{__('order number')}
+							th.orderNo(width="55", nowrap="nowrap") #{__('status')}
+							th.dealer(nowrap="nowrap") #{__('role-dealer')}
+							th.headSale.hidden(width="90", nowrap="nowrap") #{__('role-headSale')}
+							th.sale.hidden(width="90", nowrap="nowrap") #{__('role-sale')}
+							th.price.text-right(width="70", nowrap="nowrap") #{__('price')}
+							th.discount.text-right(width="60", nowrap="nowrap") #{__('discount')}
+							th.totalPrice.text-right(width="70", nowrap="nowrap") #{__('total price')}
+							th.income.text-right(width="60", nowrap="nowrap") #{__('income')}
+							th.wholesalePrice2.text-right.hidden(width="90", nowrap="nowrap") #{__('wholesalePrice')} 2
+							th.price1.text-right.hidden(width="60", nowrap="nowrap") #{__('price')} 1
+							th.price2.text-right.hidden(width="60", nowrap="nowrap") #{__('price')} 2
+							th.price3.text-right.hidden(width="60", nowrap="nowrap") #{__('price')} 3
+							th.price4.text-right.hidden(width="60", nowrap="nowrap") #{__('price')} 4
+							th.price5.text-right.hidden(width="60", nowrap="nowrap") #{__('price')} 5
+					tbody
+
+
+
+	#dv-detail.modal.fade(tabindex='-1', role='dialog')
+		.modal-dialog.modal-lg
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal')
+						span(aria-hidden='true') &times;
+						span.sr-only #{__('close')}
+					h4.modal-title #{__('order number')} : 
+						span.sp-title
+				.modal-body
+					.table-responsive.wait.hidden
+						table#tb-result_detail.table.table-striped.table-condensed.table-hover.wait.hidden
+							thead
+								tr.bg-white.font-sm
+									th.orderNo(rowspan="2", nowrap="nowrap") #{__('productName')}
+									th.text-right(rowspan="2", width="35", nowrap="nowrap") Q
+									th.text-right(rowspan="2", width="40", nowrap="nowrap") P
+									th.text-right(rowspan="2", width="35", nowrap="nowrap") DC
+									th.text-right.text-green(rowspan="2", width="55", nowrap="nowrap") P2
+									th.text-center.role-manager.hidden(colspan="3", nowrap="nowrap") #{__('role-manager')}
+									th.text-center.role-headSale.hidden(colspan="3", nowrap="nowrap") #{__('role-headSale')}
+									th.text-center.role-sale.hidden(colspan="3", nowrap="nowrap") #{__('role-sale')}
+								tr.bg-white.font-sm
+									th.text-right.role-manager.hidden(width="28", nowrap="nowrap") P3
+									th.text-right.role-manager.hidden(width="28", nowrap="nowrap") P4
+									th.text-right.role-manager.text-red.hidden(width="28", nowrap="nowrap") P5
+									th.text-right.role-headSale.hidden(width="28", nowrap="nowrap") P3
+									th.text-right.role-headSale.hidden(width="28", nowrap="nowrap") P4
+									th.text-right.role-headSale.text-red.hidden(width="28", nowrap="nowrap") P5
+									th.text-right.role-sale.hidden(width="28", nowrap="nowrap") P3
+									th.text-right.role-sale.hidden(width="28", nowrap="nowrap") P4
+									th.text-right.role-sale.text-red.hidden(width="28", nowrap="nowrap") P5									
+							tbody
+							tfoot
+								tr
+									td(colspan="14") 
+										b Q
+										| = #{__('signQ')}, 
+										b P
+										| =#{__('signP')}, 
+										b DC
+										| =#{__('signDC')}, 
+										b P2
+										| =#{__('signP2')}, 
+										b P3
+										| =#{__('signP3')}, 
+										b P4
+										| =#{__('signP4')}, 
+										b P5
+										| =#{__('signP5')}
+				.modal-footer
+					button.btn.btn-default(type='button', data-dismiss='modal') #{__('close')}

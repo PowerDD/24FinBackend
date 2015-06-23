@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	input#msg-paid(type="hidden", value="#{__('paid')}")
+	input#msg-unpaid(type="hidden", value="#{__('unpaid')}")
+	input#msg-pack(type="hidden", value="#{__('pack')}")
+	input#msg-unpack(type="hidden", value="#{__('unpack')}")
+	input#msg-total(type="hidden", value="#{__('total')}")
+
+	.row
+		.col-md-3
+			#dv-category.box.box-primary
+				.box-header
+					h3.pull-left.box-title #{__('grand total')}
+					h3.pull-right.box-title.text-red
+						span.sp-Income 0
+						small  &#3647;
+				.line
+				.box-body
+					ul#ul-month.nav.nav-pills.nav-stacked
+						li.active(data-month="0")
+							a(href="javascript:void(0)") #{__('current month')}
+						li(data-month="1")
+							a(href="javascript:void(0)") #{__('last 1 month')}
+						li(data-month="2")
+							a(href="javascript:void(0)") #{__('last 2 months')}
+						li(data-month="3")
+							a(href="javascript:void(0)") #{__('last 3 months')}
+
+		.col-md-9
+
+			#dv-loading.callout.callout-info.text-center
+				img.loading.top-2(src="/images/icons/loading.gif", alt="loading") 
+				span.loading.text-muted &nbsp;#{__('loadingData')}
+
+			#dv-no_data.callout.callout-danger.text-center.hidden
+				span.loading.text-muted &nbsp;#{__('noData')}
+
+			.table-responsive.wait.hidden
+				table#tb-result.table.table-striped.table-condensed.table-hover.wait.hidden
+					thead
+						tr.font-sm
+							th.text-center(width="92") #{__('order number')}
+							th.text-center(width="110") #{__('orderDate')}
+							th(colspan="2", width="60") #{__('status')}
+							th #{__('firstname')}
+							th #{__('shop name')}
+							th.text-right(width="65") #{__('grand total')}
+					tbody
