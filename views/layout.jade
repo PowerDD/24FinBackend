@@ -147,3 +147,6 @@ html
 		script(src='/javascripts/app.js')
 		- if (locals.script)
 			script(src=script)
+
+		if (config.screen == 'index')
+			script(src='/javascripts/dashboard.js')	
