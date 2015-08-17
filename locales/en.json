@@ -226,5 +226,9 @@
 	"screen-customer-list-detail": " ",
 	"name": "Name",
 	"screen-customer-info-header": "Customer Information",
-	"screen-customer-info-detail": " "
+	"screen-customer-info-detail": " ",
+	"New Orders": "New Orders",
+	"Order History": "Order History",
+	"Remax Wallet": "Remax Wallet",
+	"More Info": "More Info"
 }

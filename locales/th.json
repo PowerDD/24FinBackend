@@ -229,5 +229,9 @@
 	"screen-customer-info-detail": "จัดการข้อมูลต่างๆ ของลูกค้า",
 	"Hello": "Hello",
 	"screen-report-dealer-register-header": "ผู้สมัครตัวแทนจำหน่าย",
-	"screen-report-dealer-register-detail": " "
+	"screen-report-dealer-register-detail": " ",
+	"New Orders": "คำสั่งซื้อใหม่",
+	"Order History": "ประวัติคำสั่งซื้อ",
+	"Remax Wallet": "กระเป๋าเงิน",
+	"More Info": "รายละเอียดเพิ่มเติม"
 }
