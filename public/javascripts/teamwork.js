@@ -117,6 +117,20 @@ $(function() {
 		$(this).addClass('active');
 		$('#tb-sale tbody tr, #tb-dealer tbody tr').hide();
 		$('.hs-'+$(this).attr('id').replace('headSale-', '')).show();
+		var i = 0;
+		$('#tb-dealer tr').each(function(){
+			if($(this).css('display') != 'none') {
+				$(this).find('td:eq(0)').html( i );
+				i++;
+			}
+		});
+		i = 0;
+		$('#tb-sale tr').each(function(){
+			if($(this).css('display') != 'none') {
+				$(this).find('td:eq(0)').html( i );
+				i++;
+			}
+		});
 	});
 
 	$(document).on('click', '#tb-sale tbody tr', function(){

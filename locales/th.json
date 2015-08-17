@@ -6,12 +6,14 @@
 	"login": "เข้าสู่ระบบ",
 	"profile": "ข้อมูลส่วนตัว",
 	"primaryProfile": "ข้อมูลหลัก",
+	"profileSummary": "ประวัติโดยย่อ",
 	"generalInfo": "ข้อมูลทั่วไป",
 	"registerDate": "สมัครสมาชิก",
 	"loginDate": "เข้าระบบล่าสุด",
 	"updateDate": "แก้ไขข้อมูลล่าสุด",
 	"orderDate": "วันที่สั่งซื้อ",
 	"mapDate": "เพิ่มสายงาน",
+	"submitDate": "วันที่สมัคร",
 	"loginCount": "เข้าระบบ",
 	"times": "ครั้ง",
 	"memberId": "รหัสสมาชิก",
@@ -225,5 +227,7 @@
 	"screen-customer-list-detail": " ",
 	"screen-customer-info-header": "รายละเอียดข้อมูลลูกค้า",
 	"screen-customer-info-detail": "จัดการข้อมูลต่างๆ ของลูกค้า",
-	"Hello": "Hello"
+	"Hello": "Hello",
+	"screen-report-dealer-register-header": "ผู้สมัครตัวแทนจำหน่าย",
+	"screen-report-dealer-register-detail": " "
 }

@@ -70,9 +70,17 @@ function loadData(){
 							$('#tb-result thead .headSale').show();
 							html += '<td class="headSale headSale-'+result.headSaleCode+'" data-id="'+result.headSaleCode+'">'+result.headSale+'</td>';
 						}
+						else {
+							$('#tb-result thead .headSale').show();
+							html += '<td class="headSale headSale-" data-id="">-</td>';
+						}
 						if ( result.saleCode != undefined ) {
 							$('#tb-result thead .sale').show();
 							html += '<td class="sale sale-'+result.saleCode+'" data-id="'+result.saleCode+'">'+result.sale+'</td>';
+						}
+						else {
+							$('#tb-result thead .sale').show();
+							html += '<td class="sale sale-" data-id="">-</td>';
 						}
 						html += '<td class="price text-right">'+numberWithCommas(result.price.toFixed(0))+'</td>';
 						html += '<td class="text-right">'+result.discount+'%</td>';

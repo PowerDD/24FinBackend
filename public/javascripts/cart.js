@@ -184,7 +184,7 @@ function loadAddress(){
 	}, function(data){
 			if (data.success) {
 				if (data.correct) {
-					$('#txt-name').val( data.result[0].firstname );
+					$('#txt-firstname').val( data.result[0].firstname );
 					$('#txt-lastname').val( data.result[0].lastname );
 					$('#txt-nickname').val( data.result[0].contactName );
 					$('#txt-tel').val( data.result[0].mobile );
@@ -323,7 +323,7 @@ function getAddress() {
 function confirmOrder(){
 	$.post($('#apiUrl').val()+'/member/address/add', {
 		authKey: $('#authKey').val(),
-		firstname: $.trim($('#txt-name').val()),
+		firstname: $.trim($('#txt-firstname').val()),
 		lastname: $.trim($('#txt-lastname').val()),
 		contactName: $.trim($('#txt-nickname').val()),
 		mobilePhone: $.trim($('#txt-tel').val()),

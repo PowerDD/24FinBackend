@@ -201,7 +201,7 @@ block content
 									option(value="34", data-price="3", data-discount="4") #{__('channel')} 3 - 4%
 									option(value="35", data-price="3", data-discount="5") #{__('channel')} 3 - 5%
 									option(value="36", data-price="3", data-discount="6") #{__('channel')} 3 - 6%
-								if info.memberType == 'manager'
+								if info.memberType == 'headSale' || info.memberType == 'manager'
 									option(value="40", data-price="4", data-discount="0") #{__('channel')} 4
 						.clearfix
 				.modal-footer
