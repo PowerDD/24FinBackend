@@ -8,12 +8,12 @@ $(function() {
 function loadBadge() {
 	$.post($('#apiUrl').val()+'/member/summary/alert', {
 		authKey: $('#authKey').val(),
-		screen: 'member-dashboard',
+		screen: 'member-order_history',
 	}, function(data){
 			if (data.success) {
 				if (data.correct) {
 					if (data.result[0].count > 0){
-						$('#numberOrderHistory').html( data.result[0] );
+						$('#numberOrderHistory').html( data.result[0].count );
 						/*$('#'+name+' .badge').addClass(color).html( numberWithCommas(data.result[0].count) ).show();
 						if (name.indexOf('subMenu-') != -1) {
 							var parent = $('#'+name+' .badge').parents('.treeview').find('.badge:eq(0)');
