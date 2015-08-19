@@ -45,7 +45,7 @@ function loadOrderHistory() {
 						html += '<td>';
 						if (!result.active) html += '<span class="label label-default">'+$('#msg_cancel').val()+'</span>';
 						else {
-							html += '<span class="label label-success">N/A</span>';
+							html += '<i class="fa fa-heart"></i>';
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
