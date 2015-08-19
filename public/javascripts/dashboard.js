@@ -54,12 +54,12 @@ function loadOrderHistory() {
 							else if ( result.isPay && !result.isPack ) {
 								html += ' <span class="label label-info">'+$('#msg-awaiting_stock').val()+'</span>';
 							}
+							sumPrice += result.totalPrice;
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
 						html += '<td class="text-center">'+result.qty+'</td>';
-						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
-						sumPrice += result.totalPrice;
+						html += '<td class="text-right '+((result.isPay) ? 'text-red font-bold' : 'text-muted')+'">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';						
 					}
 					html += '<tr><td colspan="5" class="text-right">'+$('#msg-total').val()+'</td><td class="text-right">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
 					tbody.html(html);
