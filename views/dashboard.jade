@@ -42,40 +42,41 @@ block content
 			#dv-detail.row
 				.col-md-12.col-xs-12
 
-					.box.box-info
-						.box-header.with-border
-							h3.box-title Latest Orders
-							.box-tools.pull-right
-								button.btn.btn-box-tool(data-widget='collapse')
-									i.fa.fa-minus
-								button.btn.btn-box-tool(data-widget='remove')
-									i.fa.fa-times
-						.box-body
-							.table-responsive
-								table.table.no-margin
-									thead
-										tr
-											th Order ID
-											th Item
-											th Status
-											th Popularity
-									tbody
-										tr
-											td
-												a(href='pages/examples/invoice.html') OR9842
-											td Call of Duty IV
-											td
-												span.label.label-success Shipped
-											td
-												.sparkbar(data-color='#00a65a', data-height='20') 90,80,90,-70,61,-83,63
-										tr
-											td
-												a(href='pages/examples/invoice.html') OR1848
-											td Samsung Smart TV
-											td
-												span.label.label-warning Pending
-											td
-												.sparkbar(data-color='#f39c12', data-height='20') 90,80,-90,70,61,-83,68
+					.box.box-primary
+						.box-header
+							h3.box-title #{__('order information')} : #{__('monthly')}
+						.box-body.table-responsive
+							table#tb-order.table.table-condensed.table-hover(width="100%")
+								thead
+									tr.font-sm
+										th.text-center(rowspan="2") #{__('firstname')}
+										th.text-center(rowspan="2", width="30") #{__('price')}
+										th.text-center(colspan="2")
+											| #{__('last 3 months')}
+										th.text-center(colspan="2")
+											| #{__('last 2 months')}
+										th.text-center(colspan="2")
+											| #{__('last 1 month')}
+										th.text-center(colspan="2")
+											| #{__('current month')}
+									tr.font-sm
+										th.text-right(width="75")
+											| #{__('price')}
+										th.text-right(width="30")
+											| #{__('bill')}
+										th.text-right(width="75")
+											| #{__('price')}
+										th.text-right(width="30")
+											| #{__('bill')}
+										th.text-right(width="75")
+											| #{__('price')}
+										th.text-right(width="30")
+											| #{__('bill')}
+										th.text-right(width="75")
+											| #{__('price')}
+										th.text-right(width="30")
+											| #{__('bill')}
+								tbody
 
 
 		else
