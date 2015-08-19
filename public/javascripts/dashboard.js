@@ -41,7 +41,7 @@ function loadOrderHistory() {
 					var sumPrice = 0;
 					for(i=0; i<data.result.length; i++){
 						var result = data.result[i];
-						html += '<tr><td>'+result.orderNo+'</td>';
+						html += '<tr><td'+((!result.active) ? ' class="msg_erase"' : '')+'>'+result.orderNo+'</td>';
 						html += '<td class="text-center'+((!result.active) ? ' msg_erase' : '')+'">'+result.orderDate+'</td>';
 						html += '<td>';
 						if (!result.active) html += '<span class="label label-default">'+$('#msg-cancel').val()+'</span>';
@@ -59,7 +59,7 @@ function loadOrderHistory() {
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
 						html += '<td class="text-center">'+result.qty+'</td>';
-						html += '<td class="text-right '+((result.isPay) ? 'text-primary font-bold' : 'text-muted')+'">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';						
+						html += '<td class="text-right '+((result.isPay) ? 'text-primary font-bold' : 'text-muted')+((!result.active) ? ' msg_erase' : '')+'">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';						
 					}
 					html += '<tr><td colspan="5" class="text-right text-primary font-bold">'+$('#msg-total').val()+'</td><td class="text-right">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
 					tbody.html(html);
