@@ -59,7 +59,7 @@ function loadOrderHistory() {
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
 						html += '<td class="text-center">'+result.qty+'</td>';
-						html += '<td class="text-right '+((result.isPay) ? 'text-red font-bold' : 'text-muted')+'">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';						
+						html += '<td class="text-right '+((result.isPay) ? 'text-primary font-bold' : 'text-muted')+'">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';						
 					}
 					html += '<tr><td colspan="5" class="text-right">'+$('#msg-total').val()+'</td><td class="text-right">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
 					tbody.html(html);
