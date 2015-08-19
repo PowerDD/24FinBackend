@@ -45,7 +45,7 @@ function loadOrderHistory() {
 						html += '<td>';
 						if (!result.active) html += '<span class="label label-default">'+$('#msg_cancel').val()+'</span>';
 						else {
-							html += '<i class="fa fa-heart"></i>';
+							html += '<i class="fa fa-heart text-muted"></i>';
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
@@ -53,6 +53,7 @@ function loadOrderHistory() {
 						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
 					}
 					tbody.html(html);
+					$('i.text-muted').css('opacity', 0.3);
 				}
 			}
 	}, 'json').fail( function(xhr, textStatus, errorThrown) { console.log(xhr.statusText); });
