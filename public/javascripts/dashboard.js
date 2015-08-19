@@ -6,7 +6,7 @@ $(function() {
 
 
 function loadBadge() {
-	$.post($('#apiUrl').val()+'/member/summary/alert', {
+	$.post($('#apiUrl').val()+'/member/order/header', {
 		authKey: $('#authKey').val(),
 		screen: 'member-order_history',
 	}, function(data){
