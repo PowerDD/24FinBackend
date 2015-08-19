@@ -109,7 +109,6 @@ app.get('/logout', function(req, res, next) {
 
 
 app.get('/', function(req, res) {	
-	routes.index(req, res, 'dashboard', null);
 	fs.exists('./public/javascripts/dashboard.js', function (exists) {
 		routes.index(req, res, 'dashboard', exists ? '/javascripts/dashboard.js' : null);
 	});
