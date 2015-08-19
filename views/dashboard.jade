@@ -42,6 +42,8 @@ block content
 			#dv-detail.row
 				.col-md-12.col-xs-12
 
+					input#msg_cancel(type='hidden', value="#{__('cancel')}")
+
 					.box.box-primary.order_history.hidden
 						.box-header
 							h3.box-title #{__('Order History')}
@@ -49,11 +51,11 @@ block content
 							table.table.table-condensed.table-hover(width="100%")
 								thead
 									tr.font-sm
-										th(width="130")  #{__('order number')}
+										th(width="95")  #{__('order number')}
 										th.text-center(width="120")  #{__('orderDate')}
-										th.text-right #{__('status')}
+										th #{__('status')}
 										th.text-center(width="65")  #{__('item(s)')}
-										th.text-center(width="65")  #{__('piece(s)')}
+										th.text-center(width="55")  #{__('piece(s)')}
 										th.text-right(width="75")  #{__('grand total')}
 								tbody
 
