@@ -1,6 +1,6 @@
 $(function() {
 
-	if ( $('h3#numberWallet').length > 0 ) loadBadge();
+	if ( $('#numberOrderHistory').length > 0 ) loadBadge();
 
 });
 
@@ -13,6 +13,7 @@ function loadBadge() {
 			if (data.success) {
 				if (data.correct) {
 					if (data.result[0].count > 0){
+						$('#numberOrderHistory').html( data.result[0] );
 						/*$('#'+name+' .badge').addClass(color).html( numberWithCommas(data.result[0].count) ).show();
 						if (name.indexOf('subMenu-') != -1) {
 							var parent = $('#'+name+' .badge').parents('.treeview').find('.badge:eq(0)');
