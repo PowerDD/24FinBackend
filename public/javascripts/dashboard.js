@@ -1,9 +1,11 @@
 $(function() {
-	alert('h3#numberWallet');
+
+	if ( $('h3#numberWallet').length > 0 ) loadBadge();
+
 });
 
 
-function loadBadge( name, color ) {
+function loadBadge() {
 	$.post($('#apiUrl').val()+'/member/summary/alert', {
 		authKey: $('#authKey').val(),
 		screen: 'member-dashboard',
