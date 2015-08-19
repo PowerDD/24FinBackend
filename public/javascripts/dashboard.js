@@ -45,8 +45,8 @@ function loadOrderHistory() {
 						html += '<td>';
 						if (!result.active) html += '<span class="label label-default">'+$('#msg-cancel').val()+'</span>';
 						else {
-							html += '<i class="fa pointer fa-credit-card show-tooltip '+((result.isPay) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPay) ? $('#msg-paid').val() : $('#msg-unpaid').val())+'"></i>';
-							html += ' <i class="fa pointer fa-cube show-tooltip '+((result.isPack) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPack) ? $('#msg-pack').val() : $('#msg-unpack').val())+'"></i>';
+							html += '<i class="fa fa-lg pointer fa-bitcoin show-tooltip '+((result.isPay) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPay) ? $('#msg-paid').val() : $('#msg-unpaid').val())+'"></i>';
+							html += ' <i class="fa fa-lg pointer fa-cube show-tooltip '+((result.isPack) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPack) ? $('#msg-pack').val() : $('#msg-unpack').val())+'"></i>';
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
