@@ -3,8 +3,6 @@ extends layout
 block content
 
 	#dv-loading.col-md-9
-		.callout.callout-info.text-center
-			span.loading.text-muted &nbsp;#{__('welcome to new system v2')}
 
 		if info.memberType == 'administrator'
 			#dv-history.row
@@ -12,7 +10,7 @@ block content
 					.small-box.bg-aqua
 						.inner
 							h3#numberNewOrder 0
-							p #{__('New Orders')}
+							p #{__('Order History')}
 						.icon
 							i.ion.ion-bag
 						a.small-box-footer(href='#')
@@ -40,6 +38,9 @@ block content
 						a.small-box-footer(href='#')
 							| #{__('More Info')} 
 							i.fa.fa-arrow-circle-right
+		else
+			.callout.callout-info.text-center
+				span.loading.text-muted &nbsp;#{__('welcome to new system v2')}
 
 
 	.col-md-3
