@@ -41,11 +41,11 @@ function loadOrderHistory() {
 					for(i=0; i<data.result.length; i++){
 						var result = data.result[i];
 						html += '<tr><td>'+result.orderNo+'</td>';
-						html += '<td>'+result.orderDate+'</td>';
+						html += '<td class="text-center">'+result.orderDate+'</td>';
 						html += '<td></td>';
-						html += '<td>'+result.cnt+'</td>';
-						html += '<td>'+result.qty+'</td>';
-						html += '<td>'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
+						html += '<td class="text-center">'+result.cnt+'</td>';
+						html += '<td class="text-center">'+result.qty+'</td>';
+						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
 					}
 					tbody.html(html);
 				}
