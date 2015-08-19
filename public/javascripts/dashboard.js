@@ -38,7 +38,7 @@ function loadOrderHistory() {
 					var tbody = $('.box.order_history').find('table tbody');
 					tbody.html('');
 					var html = '';
-					var sumPrice = 0;
+					//var sumPrice = 0;
 					for(i=0; i<data.result.length; i++){
 						var result = data.result[i];
 						html += '<tr><td'+((!result.active) ? ' class="msg_erase"' : '')+'><a href="https://24fin-api.azurewebsites.net/report/order4customer/1/'+result.orderNo+'">'+result.orderNo+'</a></td>';
@@ -54,7 +54,7 @@ function loadOrderHistory() {
 							else if ( result.isPay && !result.isPack ) {
 								html += ' <span class="label label-info">'+$('#msg-awaiting_stock').val()+'</span>';
 							}
-							sumPrice += result.totalPrice;
+							//sumPrice += result.totalPrice;
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
@@ -63,7 +63,7 @@ function loadOrderHistory() {
 						html += '<td class="text-right">'+numberWithCommas(result.shippingPrice.toFixed(0))+'</td>';		
 						html += '<td class="text-right '+((result.isPay) ? 'text-primary font-bold' : 'text-muted')+((!result.active) ? ' msg_erase' : '')+'">'+numberWithCommas((result.totalPrice+result.shippingPrice).toFixed(0))+'</td>';						
 					}
-					html += '<tr><td colspan="5" class="text-right">'+$('#msg-total').val()+'</td><td class="text-right text-primary font-bold">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
+					//html += '<tr><td colspan="5" class="text-right">'+$('#msg-total').val()+'</td><td class="text-right text-primary font-bold">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
 					tbody.html(html);
 					$('.show-tooltip').tooltip();
 					$('i.text-muted').css('opacity', 0.3);
