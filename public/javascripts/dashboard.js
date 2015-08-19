@@ -41,7 +41,7 @@ function loadOrderHistory() {
 					var sumPrice = 0;
 					for(i=0; i<data.result.length; i++){
 						var result = data.result[i];
-						html += '<tr><td'+((!result.active) ? ' class="msg_erase"' : '')+'>'+result.orderNo+'</td>';
+						html += '<tr><td'+((!result.active) ? ' class="msg_erase"' : '')+'><a href="https://24fin-api.azurewebsites.net/report/order4customer/1/'+result.orderNo+'">'+result.orderNo+'</a></td>';
 						html += '<td class="text-center'+((!result.active) ? ' msg_erase' : '')+'">'+result.orderDate+'</td>';
 						html += '<td>';
 						if (!result.active) html += '<span class="label label-default">'+$('#msg-cancel').val()+'</span>';
