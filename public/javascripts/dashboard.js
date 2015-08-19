@@ -48,12 +48,12 @@ function loadOrderHistory() {
 						else {
 							html += '<i class="fa fa-lg pointer fa-bitcoin show-tooltip '+((result.isPay) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPay) ? $('#msg-paid').val() : $('#msg-unpaid').val())+'"></i>';
 							html += ' <i class="fa fa-lg pointer fa-cube show-tooltip '+((result.isPack) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPack) ? $('#msg-pack').val() : $('#msg-unpack').val())+'"></i>';
-						}
-						if ( !result.isPay ) {
-							html += '<span class="label label-default">'+$('#msg-awaiting_payment').val()+'</span>';
-						}
-						else if ( result.isPay && !result.isPack ) {
-							html += '<span class="label label-default">'+$('#msg-awaiting_stock').val()+'</span>';
+							if ( !result.isPay ) {
+								html += ' <span class="label label-info">'+$('#msg-awaiting_payment').val()+'</span>';
+							}
+							else if ( result.isPay && !result.isPack ) {
+								html += ' <span class="label label-info">'+$('#msg-awaiting_stock').val()+'</span>';
+							}
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
