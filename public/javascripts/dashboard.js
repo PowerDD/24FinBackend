@@ -61,7 +61,7 @@ function loadOrderHistory() {
 						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
 						sumPrice += result.totalPrice;
 					}
-					html += '<tr><td colspan="5">Total</td><td class="text-right">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
+					html += '<tr><td colspan="5" class="text-right">'+$('#msg-total').val()+'</td><td class="text-right">'+numberWithCommas(sumPrice.toFixed(0))+'</td></tr>';
 					tbody.html(html);
 					$('.show-tooltip').tooltip();
 					$('i.text-muted').css('opacity', 0.3);
