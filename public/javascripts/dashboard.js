@@ -43,9 +43,10 @@ function loadOrderHistory() {
 						html += '<tr><td>'+result.orderNo+'</td>';
 						html += '<td class="text-center">'+result.orderDate+'</td>';
 						html += '<td>';
-						if (!result.active) html += '<span class="label label-default">'+$('#msg_cancel').val()+'</span>';
+						if (!result.active) html += '<span class="label label-default">'+$('#msg-cancel').val()+'</span>';
 						else {
-							html += '<i class="fa fa-heart text-muted"></i>';
+							html += '<i class="fa pointer fa-credit-card show-tooltip '+((result.isPay) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPay) ? $('#msg-paid').val() : $('#msg-unpaid').val())+'"></i>';
+							html += ' <i class="fa pointer fa-cube show-tooltip '+((result.isPack) ? 'text-success' : 'text-muted')+'" data-toggle="tooltip" data-placement="top" title="'+((result.isPack) ? $('#msg-pack').val() : $('#msg-unpack').val())+'"></i>';
 						}
 						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
@@ -53,6 +54,7 @@ function loadOrderHistory() {
 						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
 					}
 					tbody.html(html);
+					$('.show-tooltip').tooltip();
 					$('i.text-muted').css('opacity', 0.3);
 				}
 			}

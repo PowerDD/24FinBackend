@@ -42,7 +42,11 @@ block content
 			#dv-detail.row
 				.col-md-12.col-xs-12
 
-					input#msg_cancel(type='hidden', value="#{__('cancel')}")
+					input#msg-cancel(type='hidden', value="#{__('cancel')}")
+					input#msg-paid(type='hidden', value="#{__('paid')}")
+					input#msg-unpaid(type='hidden', value="#{__('unpaid')}")
+					input#msg-pack(type='hidden', value="#{__('pack')}")
+					input#msg-unpack(type='hidden', value="#{__('unpack')}")
 
 					.box.box-primary.order_history.hidden
 						.box-header
