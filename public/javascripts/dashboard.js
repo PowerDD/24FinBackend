@@ -42,7 +42,12 @@ function loadOrderHistory() {
 						var result = data.result[i];
 						html += '<tr><td>'+result.orderNo+'</td>';
 						html += '<td class="text-center">'+result.orderDate+'</td>';
-						html += '<td><span class="label label-success">Shipped</span></td>';
+						html += '<td>';
+						if (!result.active) html += '<span class="label label-default">'+$('#msg_cancel').val()+'</span>';
+						else {
+							html += '<span class="label label-success">N/A</span>';
+						}
+						html += '</td>';
 						html += '<td class="text-center">'+result.cnt+'</td>';
 						html += '<td class="text-center">'+result.qty+'</td>';
 						html += '<td class="text-right">'+numberWithCommas(result.totalPrice.toFixed(0))+'</td>';
