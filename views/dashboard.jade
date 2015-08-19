@@ -44,38 +44,20 @@ block content
 
 					.box.box-primary
 						.box-header
-							h3.box-title #{__('order information')} : #{__('monthly')}
+							h3.box-title #{__('Order History')}
 						.box-body.table-responsive
 							table#tb-order.table.table-condensed.table-hover(width="100%")
 								thead
 									tr.font-sm
-										th.text-center(rowspan="2") #{__('firstname')}
-										th.text-center(rowspan="2", width="30") #{__('price')}
-										th.text-center(colspan="2")
-											| #{__('last 3 months')}
-										th.text-center(colspan="2")
-											| #{__('last 2 months')}
-										th.text-center(colspan="2")
-											| #{__('last 1 month')}
-										th.text-center(colspan="2")
-											| #{__('current month')}
-									tr.font-sm
-										th.text-right(width="75")
-											| #{__('price')}
-										th.text-right(width="30")
-											| #{__('bill')}
-										th.text-right(width="75")
-											| #{__('price')}
-										th.text-right(width="30")
-											| #{__('bill')}
-										th.text-right(width="75")
-											| #{__('price')}
-										th.text-right(width="30")
-											| #{__('bill')}
-										th.text-right(width="75")
-											| #{__('price')}
-										th.text-right(width="30")
-											| #{__('bill')}
+										th.text-right(width="75")  #{__('order number')}
+										th.text-right(width="75")  #{__('orderDate')}
+										th.text-right  #{__('status')}
+										th.text-right(width="75")  #{__('item(s)')}
+										th.text-right(width="75")  #{__('piece(s)')}
+										th.text-right(width="75")  #{__('total price')}
+										th.text-right(width="75")  #{__('discount')}
+										th.text-right(width="75")  #{__('shipping')}
+										th.text-right(width="75")  #{__('grand total')}
 								tbody
 
 
